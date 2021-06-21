@@ -1,18 +1,16 @@
-let confirmacion = confirm("¿Quieres ver el modo oscuro?");
-let tarjetas = document.querySelectorAll('div.item');
-let parrafos = document.querySelectorAll('p');
-let titulos = document.querySelectorAll('h2');
+function alternar () {    
+    document.querySelector('body').classList.toggle('dark');     
+}
 
-if(confirmacion) {
-    document.querySelector('body').classList.add('fondo-oscuro');
-    document.querySelector('h1').classList.add('titulo-oscuro');
-    tarjetas.forEach(tarjeta => {
-        tarjeta.classList.add('items-oscuros');
-    });
-    parrafos.forEach(parrafo => {
-        parrafo.classList.add('textos');
-    });
-    titulos.forEach(titulo => {
-        titulo.classList.add('textos');
-    });
-} 
+let contenedor = document.querySelector(".contenedor");
+
+PUBLICACIONES.forEach(publicacion => {
+    contenedor.innerHTML+= `
+    <div class="item">
+        <img src="${publicacion.imagen}">
+        <h2>${publicacion.titulo}</h2>
+        <p>
+        ${publicacion.descripcion}
+        </p>
+    </div>`;
+})
