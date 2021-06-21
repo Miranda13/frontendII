@@ -1,6 +1,7 @@
 let confirmacion = confirm("¿Quieres ver el modo oscuro?");
 let tarjetas = document.querySelectorAll('div.item');
 let parrafos = document.querySelectorAll('p');
+let titulos = document.querySelectorAll('h2');
 
 if(confirmacion) {
     document.querySelector('body').classList.add('fondo-oscuro');
@@ -10,5 +11,8 @@ if(confirmacion) {
     });
     parrafos.forEach(parrafo => {
         parrafo.classList.add('textos');
+    });
+    titulos.forEach(titulo => {
+        titulo.classList.add('textos');
     });
 } 

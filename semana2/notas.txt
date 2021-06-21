@@ -1,0 +1,4 @@
+.querySelector("clase, id").innerText -> retorna el contenido de la etiqueta.
+.innerHTML -> retorna todo el contenido html del nodo que se esta capturando.
+array de nodos
+.getElementsByTagName('span') -> retorna las etiquetas que tiene el nodo capturado.
