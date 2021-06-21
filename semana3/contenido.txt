@@ -1,0 +1,16 @@
+
+createElement -> se crea nodo html
+createTextNode -> se crea contenido de la etiqueta
+appendChild -> se agrega el texto del nodo al elemento
+
+hasAttribute -> tiene el atributo?, sintaxis ("")
+getAttribute -> obtiene el atributo, sintaxis ("")
+removeAttribute -> remueve el atributo, sintaxis ("")
+setAttribute -> escribe un atributo, sintaxis ("","")
+
+# Eventos -> acciones que ocurren en el navegador o ejecutadas por el usuario
+
+.addEventListener -> se ejecuta siempre
+preventDefault -> anula el comportamiento por defecto
+onload -> ejecuta acciones hasta el momento en que se carga la pagina
+onclick -> ejecuta una accion cuando se haga clic

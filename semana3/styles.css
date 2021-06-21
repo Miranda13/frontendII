@@ -1,0 +1,9 @@
+.contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.tarjeta img {
+    width: 400px;
+    margin: 10px;
+}
