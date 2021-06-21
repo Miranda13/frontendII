@@ -14,3 +14,11 @@ setAttribute -> escribe un atributo, sintaxis ("","")
 preventDefault -> anula el comportamiento por defecto
 onload -> ejecuta acciones hasta el momento en que se carga la pagina
 onclick -> ejecuta una accion cuando se haga clic
+
+# Eventos del mouse
+
+mouseover, mouseout, click
+
+# Eventos del teclado
+
+keydown, keyup, keypress
