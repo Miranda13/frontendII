@@ -18,13 +18,26 @@ const persona = {
 }
 
 form.addEventListener('submit', function (evento) {
-    // evento.preventDefault();
+    evento.preventDefault();
     if(validarNombre(nombre.value) != "error"){
         persona.nombre = nombre.value
     }
-
-
 });
+
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function(box){
+        if (checkbox.value === 'hobbiesVideoJuegos' && checkbox.checked) {
+            document.querySelector('#cocina').disabled = true;
+        } else if (checkbox.value === 'hobbiesVideoJuegos' && !checkbox.checked) {
+            document.querySelector('#cocina').disabled = false;
+        }
+        if (checkbox.value === 'hobbiesCocina' && checkbox.checked) {
+            document.querySelector('#video').disabled = true;
+        } else if (checkbox.value === 'hobbiesCocina' && !checkbox.checked) {
+            document.querySelector('#video').disabled = false;
+        }
+    })
+})
 
 nombre.addEventListener('keyup', function(e){
     if(validarNombre(nombre.value)==="error"){
@@ -40,19 +53,19 @@ nombre.addEventListener('keyup', function(e){
 function validarNombre(nom) {
     let respuesta;
     let completo = nom.split(" "); //esto es un array
+    const reg = new RegExp("^[a-zA-Z ]+$");
     //valido el largo del nombre y apellido + que haya completado ambos  
-    if (completo[0].length > 2 && completo[1] && completo[1].length > 2) {
-
+    if (completo[0].length > 1 && completo[1] && completo[1].length > 1 && nom.length < 150 && reg.test(nom)) {
         //normalizar
         respuesta = nom.trim().toLowerCase();
     } else {
         respuesta = "error";
     }
-
     return respuesta;
 }
 
 function validarPassword(pass) {
+    let respuesta;
      //esto es un array
     //valido el largo del nombre y apellido + que haya completado ambos  
     if (pass.length > 6) {
