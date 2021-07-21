@@ -74,3 +74,41 @@ TIPS:
 
    ¡Manos a la obra!
  */
+
+const btn = document.querySelector('.login-btn');
+const password = document.querySelector('#password-input');
+const email = document.querySelector('#email-input');
+const error = document.querySelector('#error-container');
+const loader = document.querySelector('#loader');
+
+btn.addEventListener('click', () => {
+  if(valerUsuario(email.value, password.value)) {
+    error.classList.add('hidden');
+    if (validarUsuario(email.value,password.value)) {
+      error.classList.add('hidden');
+      peticion();
+    } else {
+      error.classList.remove('hidden');
+      error.innerHTML = "<small>Alguno de los datos ingresados son incorrectos</small>";
+    }
+  } else {
+    error.classList.remove('hidden');
+    error.innerHTML = "<small>Correo invalido ó contraseña menor a 5 caracteres</small>";
+  }
+});
+
+function valerUsuario(mail,pass) {
+  return pass.length > 4 && mail.includes('@')
+}
+
+function validarUsuario(mail, pass) {
+  return baseDeDatos.usuarios.some(user => user.email === mail && user.password === pass)
+}
+
+function peticion() {  
+  loader.classList.remove('hidden');
+  setTimeout(function(){
+    loader.classList.add('hidden');
+    location.href = './perfil.html';
+  }, 3000)  
+}
